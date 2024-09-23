@@ -160,7 +160,7 @@
         <div class="row is-full-width">
           <h2 class="title is-3 has-text-centered"><span class="dvima">Method</span></h2>
           <br>
-          <video poster="" autoplay controls muted loop height="100%">
+          <video poster="" autoplay muted loop height="100%">
             <source src="static/videos/method.mp4" type="video/mp4">
           </video>
           <br>
@@ -195,7 +195,7 @@
           <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
           <br>
           <h3 class="title is-4"><span class="dvima">Experiments: Real-world, long-horizon manipulation tasks </span></h3>
-          <video poster="" autoplay controls muted loop height="100%">
+          <video autoplay muted loop height="100%">
             <source src="static/videos/tasks.mp4" type="video/mp4">
           </video>
           <br>
@@ -203,6 +203,38 @@
           <b>(b) Groceries:</b> the robot picks a shopping bag via a thin handle and places all the chips inside. 
           <b> (c) Laundry:</b> the robot folds a polo shirt placed in randomly on the table. </span>
           <br>
+          <div>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+          </div>
+          <img src="static/images/tasksuccess.png" class="interpolation-image" alt=""
+            style="display: block; margin-left: auto; margin-right: auto" />
+          <br>
+          <span style="font-size: 110%"><b>Quantitative Results:</b> We benchmark EgoMimic against ACT, a state of the art imitation learning
+            algorithm and Mimicplay, a recent state of the art method that learns planners from human
+            data to guide low-level policies. We evaluate these methods on the 3 manipulation tasks. Across
+            all tasks we observed a relative improvement in score of 34-228%, and an improvement in absolute task success rate from
+            8-33% over ACT.</span>
+          <div>
+              &nbsp;
+              &nbsp;
+              &nbsp;
+              &nbsp;
+          </div>
+          <video autoplay muted loop height="100%">
+            <source src="static/videos/robustness.mp4" type="video/mp4">
+          </video>
+          <br>
+          <span style="font-size: 110%"><b>Robustness:</b> EgoMimic exhibits replanning and can handle a wide variation in target object placement. It can even react to perturbations in robot position.</span>
+          <br>
+          <div>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+          </div>
         </div>
       </div>
     </div>
