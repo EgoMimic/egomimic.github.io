@@ -6,7 +6,7 @@
         content="Scaling imitation learning through end-to-end, egocentric, and unified human-to-robot imitation learning">
   <meta name="keywords" content="EgoMimic, EMimic, EgoPlay, Mimic, Imitation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EgoMimic | Scaling Imitation Learning through Egocentric Video</title>
+  <title>EgoMimic : Scaling Imitation Learning via Egocentric Video</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -74,7 +74,7 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span>
+            <span class="author-block"><sup>1</sup>Georgia Tech,</span>
             <span class="author-block"><sup>2</sup>Stanford University</span>
           </div>
 
@@ -101,7 +101,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://youtu.be/8s1y4jsiJ10"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -133,15 +133,75 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3">COMING SOON...</h2>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p style="font-size: 125%">
+            The scale and diversity of demonstration data required for imitation learning is a significant challenge.
+            We present <b>EgoMimic</b>, a full-stack framework that scales manipulation through egocentric-view human demonstrations. 
+            <b>EgoMimic</b> achieves this through: (1) an ergonomic human data collection system using the Project Aria glasses, 
+            (2) a low-cost bimanual manipulator that minimizes the kinematic gap to human data, (3) cross-domain data alignment techniques, 
+            and (4) an imitation learning architecture that co-trains on hand and robot data. Compared to prior works that only extract 
+            high-level intent from human videos, our approach treats human and robot data equally as embodied demonstration data and 
+            learns a unified policy from both data sources. <b>EgoMimic</b> achieves significant improvement on a diverse set of long-horizon, 
+            single-arm and bimanual manipulation tasks over state-of-the-art imitation learning methods and enables generalization to entirely new scenes.
+            Finally, we show that scaling 1 hour of additional hand data is significantly more valuable than 1 hour of additional robot data.
+
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Method</span></h2>
+          <br>
+          <video poster="" autoplay controls muted loop height="100%">
+            <source src="static/videos/method.mp4" type="video/mp4">
+          </video>
+          <br>
+          <span style="font-size: 110%"><b>EgoMimic</b>. (a) A stack to collect human data for manipulation using the <a href="https://www.projectaria.com/">Project Aria glasses</a>. 
+            (b) A low cost and capable humanoid that can readily leverage egocentric manipulation data. 
+            Our approach lets us collect large scale human data which closely matches the observations seen by a human. </span>
+          <div>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+          </div>
+          <img src="static/images/method.jpg" class="interpolation-image" alt=""
+            style="display: block; margin-left: auto; margin-right: auto" />
+          <br>
+          <span style="font-size: 110%"><b>Unified Policy from Human and Robot Data</b>. The model processes normalized hand and robot data through
+            shared vision and policy network, outputting 2 seperate predictions: Pose for
+            both human and robot data, and joint actions for robot data. The
+            framework uses masked images to mitigate human-robot appearance
+            gaps and incorporates wrist camera views for the robot.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section"></section>
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
+          <br>
+          <h3 class="title is-4"><span class="dvima">Experiments: Real-world, long-horizon manipulation tasks </span></h3>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <footer class="footer">
   <div class="container">
@@ -150,7 +210,7 @@
         <div class="content has-text-centered">
           <p>
             Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a>, <a
-              href="https://peract.github.io/">PerAct</a> and <a href="https://mimicplay.github.io">MimicPlay</a>.
+              href="https://peract.github.io/">PerAct</a> and <a href="https://mimic-play.github.io">MimicPlay</a>.
           </p>
         </div>
       </div>
