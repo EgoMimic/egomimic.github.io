@@ -88,6 +88,13 @@ body {
     border-radius: 10px !important;
 }
 
+.large-video {
+  width: 85%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+}
+
 .publication-video iframe {
     position: absolute;
     top: 0;
