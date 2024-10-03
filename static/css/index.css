@@ -125,8 +125,8 @@ body {
 }
 
 video {
-  width: 70%;  /* Adjust this if you want the video to be smaller or larger */
-  max-width: 640px;  /* Set a maximum width */
+  width: 100%;  /* Adjust this if you want the video to be smaller or larger */
+  max-width: 720px;  /* Set a maximum width */
   height: auto;  /* Maintain aspect ratio */
   margin: 0 auto;  /* Ensure the video is centered horizontally */
   display: block;  /* Ensure video behaves like a block element for centering */

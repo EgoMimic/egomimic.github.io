@@ -358,6 +358,7 @@
 
 <!-- Custom Script for Button-based Carousel -->
 <script>
+document.addEventListener('DOMContentLoaded', () => {
 
 const wrapTrack = document.querySelector('.wrap-carousel-track');
 const wrapDots = document.querySelectorAll('.wrap-dot');
@@ -396,7 +397,7 @@ wrapDots.forEach(dot => {
 
 // Initialize the carousel
 updateWrapCarousel();
-
+});
   document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.item');
     const taskDescriptions = [
