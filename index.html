@@ -108,6 +108,43 @@
     </div>
   </div>
 </section>
+<div class="wrap-carousel-container">
+  <button id="wrap-prev-btn-unique" class="wrap-carousel-nav wrap-prev-button">
+    <span class="icon is-large"><i class="fas fa-chevron-left"></i></span>
+  </button>
+
+  <div class="wrap-carousel">
+    <div class="wrap-carousel-track">
+      <div class="wrap-carousel-item">
+        <video src="static/videos/intro/intro1.mp4" autoplay loop muted></video>
+      </div>
+      <div class="wrap-carousel-item">
+        <video src="static/videos/intro/intro2.mp4" autoplay loop muted></video>
+      </div>
+      <div class="wrap-carousel-item">
+        <video src="static/videos/intro/intro3.mp4" autoplay loop muted></video>
+      </div>
+      <div class="wrap-carousel-item">
+        <video src="static/videos/robustness1.mp4" autoplay loop muted></video>
+      </div>
+      <div class="wrap-carousel-item">
+        <video src="static/videos/robustness2.mp4" autoplay loop muted></video>
+      </div>
+    </div>
+  </div>
+
+  <button id="wrap-next-btn-unique" class="wrap-carousel-nav wrap-next-button">
+    <span class="icon is-large"><i class="fas fa-chevron-right"></i></span>
+  </button>
+
+  <div class="wrap-pagination-dots">
+    <span class="wrap-dot" data-index="0"></span>
+    <span class="wrap-dot" data-index="1"></span>
+    <span class="wrap-dot" data-index="2"></span>
+    <span class="wrap-dot" data-index="3"></span>
+    <span class="wrap-dot" data-index="4"></span>
+  </div>
+</div>
 
 <section class="section"></section>
   <div class="container is-max-desktop">
@@ -139,10 +176,17 @@
       <div class="rows is-centered">
         <div class="row is-full-width">
           <h2 class="title is-3 has-text-centered"><span class="dvima">Method</span></h2>
-          <br>
+          <div>
           <video poster="" autoplay muted controls loop height="100%">
-            <source src="static/videos/method.mp4" type="video/mp4">
+            <source src="static/videos/method1.mp4" type="video/mp4">
           </video>
+          </div>
+          <br>
+          <div>
+          <video poster="" autoplay muted controls loop height="100%">
+            <source src="static/videos/method2.mp4" type="video/mp4">
+          </video>
+          </div>
           <br>
           <span style="font-size: 110%"><b>EgoMimic</b>. (a) A stack to collect human data for manipulation using the <a href="https://www.projectaria.com/">Project Aria glasses</a>. 
             (b) A low cost and capable humanoid that can readily leverage egocentric manipulation data. 
@@ -168,7 +212,6 @@
       <div class="rows is-centered">
         <div class="row is-full-width">
           <h2 class="title is-3 has-text-centered"><span class="dvima">Results</span></h2>
-          <br>
           <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: In-domain Performance</span></h3>
 
           <!-- Carousel of Videos and Buttons -->
@@ -227,18 +270,20 @@
         <div class="columns is-centered">
           <div>
             <video autoplay muted loop height="100%">
-              <source src="static/videos/robustness_crop.mp4" type="video/mp4">
+              <source src="static/videos/robustness1.mp4" type="video/mp4">
+            </video>
+            <video autoplay muted loop height="100%">
+              <source src="static/videos/robustness2.mp4" type="video/mp4">
             </video>
           </div>
         </div>
         <div>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <br>
         <h3 class="title is-4 has-text-centered"><span class="dvima">Experiments: Generalization</span></h3>
         <h3 class="title is-5" align="center"><span class="dvima">EgoMimic generalizes to new scenes by co-training on robot data in original scene and human data in new scene</span></h3>
         <div class="columns is-centered">
           <div>
-            <video autoplay muted loop height="75%">
-              <source src="static/videos/scenegen.mp4" type="video/mp4">
-            </video>
+            <video src="static/videos/scenegen.mp4" autoplay muted loop style="width: 100%; display: block; margin: 0 auto;"></video>
           </div>
         </div>
         <img src="static/images/scenegengraph.png" alt="" 
@@ -250,9 +295,7 @@
         <h3 class="title is-5" align="center"><span class="dvima">Scaling hand data</data></span></h3>
         <div class="columns is-centered">
           <div>
-            <video autoplay muted loop height="75%">
-              <source src="static/videos/scaling_qual.mp4" type="video/mp4">
-            </video>
+            <video src="static/videos/scaling_qual.mp4" autoplay muted loop style="width: 100%; display: block; margin: 0 auto;"></video>
           </div>
         </div>
         <h3 class="title is-5" align="center"><span class="dvima">Scaling hand data v/s scaling robot data</span></h3>
@@ -311,6 +354,45 @@
 
 <!-- Custom Script for Button-based Carousel -->
 <script>
+
+  const wrapTrack = document.querySelector('.wrap-carousel-track');
+const wrapDots = document.querySelectorAll('.wrap-dot');
+const wrapPrevButton = document.getElementById('wrap-prev-btn-unique');
+const wrapNextButton = document.getElementById('wrap-next-btn-unique');
+let wrapCurrentIndex = 0;
+const wrapTotalItems = 5;
+
+function updateWrapCarousel() {
+  // Calculate the new translateX value for the track
+  const newTranslateX = -(wrapCurrentIndex * 100) + '%';
+  wrapTrack.style.transform = `translateX(${newTranslateX})`;
+
+  // Update the active dot
+  wrapDots.forEach(dot => dot.classList.remove('active'));
+  wrapDots[wrapCurrentIndex].classList.add('active');
+}
+
+wrapPrevButton.addEventListener('click', () => {
+  wrapCurrentIndex = (wrapCurrentIndex - 1 + wrapTotalItems) % wrapTotalItems;
+  updateWrapCarousel();
+});
+
+wrapNextButton.addEventListener('click', () => {
+  wrapCurrentIndex = (wrapCurrentIndex + 1) % wrapTotalItems;
+  updateWrapCarousel();
+});
+
+// Add click event for dots
+wrapDots.forEach(dot => {
+  dot.addEventListener('click', (event) => {
+    wrapCurrentIndex = parseInt(event.target.dataset.index);
+    updateWrapCarousel();
+  });
+});
+
+// Initialize the carousel
+updateWrapCarousel();
+
   document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.item');
     const taskDescriptions = [

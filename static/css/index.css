@@ -98,6 +98,89 @@ body {
 
 .publication-body img {}
 
+.wrap-carousel-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vertically centers buttons */
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrap-carousel {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.wrap-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.wrap-carousel-item {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+video {
+  width: 70%;  /* Adjust this if you want the video to be smaller or larger */
+  max-width: 640px;  /* Set a maximum width */
+  height: auto;  /* Maintain aspect ratio */
+  margin: 0 auto;  /* Ensure the video is centered horizontally */
+  display: block;  /* Ensure video behaves like a block element for centering */
+  border: none;  /* Remove any borders from the video */
+}
+
+.wrap-carousel-nav {
+  position: absolute;
+  top: 50%;  /* Vertically center the buttons */
+  transform: translateY(-50%);  /* Adjust for centering */
+  background-color: rgba(0, 0, 0, 1);  /* Semi-transparent background */
+  border: none;
+  color: white;
+  padding: 10px;  /* Adjust padding to fit icons */
+  font-size: 1.5em;  /* Adjust icon size */
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;  /* Center the arrow in the button */
+}
+
+.wrap-prev-button {
+  left: 10px;
+}
+
+.wrap-next-button {
+  right: 10px;
+}
+
+.wrap-carousel-nav:hover {
+  background-color: rgba(0, 0, 0, 0.7);  /* Darken background on hover */
+}
+
+.wrap-pagination-dots {
+  display: flex;
+  justify-content: center; /* Horizontally centers the dots */
+  align-items: center;
+  margin-top: 15px; /* Adds space between the carousel and dots */
+}
+.wrap-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.wrap-dot.active {
+  background-color: #333;
+}
+
 /* Results Carousel Styling */
 .results-carousel {
   position: relative; /* This allows the buttons to be positioned correctly */
