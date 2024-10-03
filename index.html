@@ -130,6 +130,9 @@
       <div class="wrap-carousel-item">
         <video src="static/videos/robustness2.mp4" autoplay loop muted></video>
       </div>
+      <div class="wrap-carousel-item">
+        <video src="static/videos/intro/intro4.mp4" autoplay loop muted></video>
+      </div>
     </div>
   </div>
 
@@ -143,6 +146,7 @@
     <span class="wrap-dot" data-index="2"></span>
     <span class="wrap-dot" data-index="3"></span>
     <span class="wrap-dot" data-index="4"></span>
+    <span class="wrap-dot" data-index="5"></span>
   </div>
 </div>
 
@@ -360,7 +364,7 @@ const wrapDots = document.querySelectorAll('.wrap-dot');
 const wrapPrevButton = document.getElementById('wrap-prev-btn-unique');
 const wrapNextButton = document.getElementById('wrap-next-btn-unique');
 let wrapCurrentIndex = 0;
-const wrapTotalItems = 5;
+const wrapTotalItems = 6;
 
 function updateWrapCarousel() {
   // Calculate the new translateX value for the track
